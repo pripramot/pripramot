@@ -1,4 +1,4 @@
-### Hi there 👋pripramot
+### สวัสดี!ครับ 👋ปรีดิ์ปราโมทย์
 
 <!--
 **pripramot/pripramot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
