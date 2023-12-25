@@ -1,4 +1,7 @@
-### สวัสดี!ครับ 👋ปรีดิ์ปราโมทย์
+## สวัสดี!ครับ 👋ปรีดิ์ปราโมทย์
+
+
+###  [[เส้นทางการเรียนรู้](https://learn.microsoft.com/en-us/users/phongwutwechabut-7974/)]
 
 <!--
 **pripramot/pripramot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
