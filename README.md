@@ -12,9 +12,12 @@
 ---
 
 
-###  [ฉันพึ่งเริ่มเรียนรู้](https://learn.microsoft.com/en-us/users/wechabut/)
+###  <p align="center">[ฉันพึ่งเริ่มเรียนรู้](https://learn.microsoft.com/en-us/users/wechabut/)
 
-[🦋](/.fb.mpg)
+
+---
+
+![Frb](./fb.png)
 
 <!--
 **pripramot/pripramot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
