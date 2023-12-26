@@ -14,6 +14,8 @@
 
 ###  [ฉันพึ่งเริ่มเรียนรู้](https://learn.microsoft.com/en-us/users/wechabut/)
 
+[🦋](/.fb.mpg)
+
 <!--
 **pripramot/pripramot** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
