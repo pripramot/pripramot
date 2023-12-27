@@ -25,7 +25,8 @@
 
 
 
-###  <p align="center">รายละเอียด โปรแกรม
+###  <p align="center">รายละเอียด โปรแกรม [Platform-Vol.1](https://github.com/pripramot/Platform-Vol.1)
+
 
 
 ---
