@@ -18,7 +18,7 @@
 ---
 
 ## <p align="center">🐬หากสนับสนุน ชานมเย็น ขนมปังอุ่นๆ 7-11 รับ desktop apps electronjs 
-![sp](https://res.cloudinary.com/mintmu/image/upload/v1703701764/Art.png)
+
 
 
 ---
