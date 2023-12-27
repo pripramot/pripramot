@@ -12,7 +12,7 @@
 ---
 
 
-###  <p align="center">[ฉันพึ่งเริ่มเรียนรู้](https://learn.microsoft.com/en-us/users/wechabut/) ตรวจสอบใบรับรอง
+###  <p align="center">[ฉันพึ่งเริ่มเรียนรู้](https://learn.microsoft.com/en-us/users/wechabut/) ⬅️ตรวจสอบใบรับรอง
 
 
 ---
