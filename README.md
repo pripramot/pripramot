@@ -14,7 +14,7 @@
 3. `npm run tauri dev`
 
 ## 🛡️ Forensic Logging
-ทุกการทำงานจะถูกบันทึกไว้ในโฟลเดอร์ `.gstore/logs/` เพื่อการตรวจสอบย้อนหลัง
+
 
 ---
-*Developed by Jarntam & Nangnoy*
+*Developed by Jarntam & Nangnoy* 🙄🚀ⅨⅫ⫺⫺
