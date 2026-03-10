@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+pytest
+python-json-logger
+requests
+pre-commit

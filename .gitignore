@@ -1,0 +1,23 @@
+# Node
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Rust
+target/
+Cargo.lock
+
+# Tauri
+src-tauri/target/
+src-tauri/gen/
+src-tauri/icons/
+
+# GSTORE Local
+.gstore/logs/
+.gstore/cache/
+.gstore/*.db
+
+# OS
+.DS_Store
+Thumbs.db

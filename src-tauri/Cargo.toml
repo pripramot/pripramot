@@ -1,0 +1,28 @@
+[package]
+name = "gstore"
+version = "0.1.0"
+description = "A high-performance file search and app store"
+authors = ["Jarntam", "Nangnoy"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0.0", features = [] }
+
+[dependencies]
+tauri = { version = "2.0.0", features = ["devtools", "protocol-asset"] }
+tauri-plugin-shell = "2.0.0"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.0", features = ["full"] }
+thiserror = "1.0"
+anyhow = "1.0"
+walkdir = "2.5"
+ignore = "0.4"
+sha2 = "0.10"
+chrono = { version = "0.4", features = ["serde"] }
+pe-parse = "0.1"
+goblin = "0.8"
+infer = "0.15"
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]

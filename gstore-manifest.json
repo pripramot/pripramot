@@ -1,0 +1,28 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-03-10T23:05:00Z",
+  "catalog": [
+    {
+      "id": "gstore-scanner",
+      "name": "GSTORE Native Scanner",
+      "description": "The high-speed file discovery engine.",
+      "version": "0.1.0",
+      "category": "Forensics",
+      "icon_url": "https://raw.githubusercontent.com/pripramot/pripramot/main/icons/scanner.png",
+      "download_url": "https://github.com/pripramot/pripramot/releases/latest/download/gstore_scanner.exe",
+      "checksum": "sha256:...",
+      "is_verified": true
+    },
+    {
+      "id": "ahq-store",
+      "name": "AHQ Store",
+      "description": "Modern app store for Windows.",
+      "version": "1.5.0",
+      "category": "Tools",
+      "icon_url": "https://raw.githubusercontent.com/ahqstore/assets/main/icon.png",
+      "download_url": "https://github.com/ahqstore/ahqstore/releases/download/v1.5.0/ahqstore_setup_win32_amd64.exe",
+      "checksum": "sha256:...",
+      "is_verified": true
+    }
+  ]
+}

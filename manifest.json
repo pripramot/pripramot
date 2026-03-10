@@ -1,0 +1,23 @@
+{
+  "project": "GSTORE",
+  "coding_style": {
+    "base": "Company X Python Style Guide",
+    "line_length": 100,
+    "indent": 4,
+    "formatter": "black",
+    "linter": "flake8",
+    "docstring_style": "google",
+    "type_hints": true
+  },
+  "forensic_logging": {
+    "format": "json",
+    "required_fields": ["timestamp", "level", "service", "trace_id", "span_id", "user_id", "event"],
+    "retention_days": 90,
+    "storage": "centralized-log-bucket-or-db",
+    "sensitive_data_policy": "mask_or_remove_pii"
+  },
+  "testing": {
+    "unit_test_framework": "pytest",
+    "coverage_threshold": 80
+  }
+}
