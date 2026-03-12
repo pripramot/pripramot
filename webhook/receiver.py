@@ -1,5 +1,6 @@
 import hashlib
 import hmac
+import json
 import os
 import uuid
 
@@ -10,17 +11,20 @@ from src.gstore.logging_config import configure_json_logging
 app = FastAPI()
 logger = configure_json_logging("gstore-webhook")
 
-WEBHOOK_SECRET = os.environ.get("GITHUB_WEBHOOK_SECRET", "")
+
+def _get_webhook_secret() -> str:
+    return os.environ.get("GITHUB_WEBHOOK_SECRET", "")
 
 
 def verify_signature(payload_body: bytes, signature_header: str | None) -> bool:
     """Verify the HMAC-SHA256 signature from GitHub webhook."""
-    if not WEBHOOK_SECRET:
+    secret = _get_webhook_secret()
+    if not secret:
         return False
     if not signature_header or not signature_header.startswith("sha256="):
         return False
     expected = hmac.new(
-        WEBHOOK_SECRET.encode("utf-8"),
+        secret.encode("utf-8"),
         payload_body,
         hashlib.sha256,
     ).hexdigest()
@@ -41,11 +45,11 @@ async def webhook_receiver(
             "webhook_signature_invalid",
             extra={"event": x_github_event},
         )
-        raise HTTPException(status_code= 403, detail="Invalid signature")
+        raise HTTPException(status_code=403, detail="Invalid signature")
 
     try:
-        payload = await request.json()
-    except Exception:
+        payload = json.loads(body)
+    except (json.JSONDecodeError, UnicodeDecodeError):
         raise HTTPException(status_code=400, detail="Invalid JSON payload")
 
     trace_id = str(uuid.uuid4())

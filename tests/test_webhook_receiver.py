@@ -6,27 +6,22 @@ import os
 import pytest
 from fastapi.testclient import TestClient
 
-
-@pytest.fixture(autouse=True)
-def _set_webhook_secret(monkeypatch):
-    """Ensure a known webhook secret is set for every test."""
-    monkeypatch.setenv("GITHUB_WEBHOOK_SECRET", "test-secret-key")
-    # Re-import so the module picks up the new env var.
-    import importlib
-    import webhook.receiver as mod
-
-    importlib.reload(mod)
-    yield mod
-
-
-@pytest.fixture()
-def client(_set_webhook_secret):
-    return TestClient(_set_webhook_secret.app)
+from webhook.receiver import app
 
 
 def _sign(payload: bytes, secret: str = "test-secret-key") -> str:
     sig = hmac.new(secret.encode("utf-8"), payload, hashlib.sha256).hexdigest()
     return f"sha256={sig}"
+
+
+@pytest.fixture(autouse=True)
+def _set_webhook_secret(monkeypatch):
+    monkeypatch.setenv("GITHUB_WEBHOOK_SECRET", "test-secret-key")
+
+
+@pytest.fixture()
+def client():
+    return TestClient(app)
 
 
 # --- Valid requests ---
@@ -96,11 +91,7 @@ def test_webhook_invalid_json(client):
 def test_webhook_no_secret_configured(monkeypatch):
     """When GITHUB_WEBHOOK_SECRET is empty, all requests should be rejected."""
     monkeypatch.setenv("GITHUB_WEBHOOK_SECRET", "")
-    import importlib
-    import webhook.receiver as mod
-
-    importlib.reload(mod)
-    client = TestClient(mod.app)
+    client = TestClient(app)
 
     body = json.dumps({"action": "push"}).encode()
     resp = client.post(
