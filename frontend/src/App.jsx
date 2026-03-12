@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, ShoppingBag, Terminal, FileText, 
   ShieldCheck, LayoutGrid, AppWindow, 
-  Settings, Download, Star, ChevronRight, Info
+  Settings, Download, Star, ChevronRight, Info, HardDrive
 } from 'lucide-react';
 
 export default function App() {

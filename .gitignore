@@ -21,3 +21,17 @@ src-tauri/icons/
 # OS
 .DS_Store
 Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# PE binary sections (forensic test data – tracked via releases, not git)
+.data
+.text
+.rdata
+.pdata
+.reloc
+.fptable
+.rsrc/

@@ -1,10 +1,12 @@
 import logging
-from pythonjsonlogger import jsonlogger
+
+from pythonjsonlogger.json import JsonFormatter
+
 
 def configure_json_logging(service_name: str = "gstore"):
     handler = logging.StreamHandler()
-    fmt = '%(asctime)s %(levelname)s %(name)s %(service)s %(trace_id)s %(span_id)s %(message)s'
-    formatter = jsonlogger.JsonFormatter(fmt)
+    fmt = "%(asctime)s %(levelname)s %(name)s %(service)s %(trace_id)s %(span_id)s %(message)s"
+    formatter = JsonFormatter(fmt)
     handler.setFormatter(formatter)
 
     root = logging.getLogger()
