@@ -89,6 +89,7 @@ fn log_forensic_event(
     // node_id: sha256 of the machine hostname.
     // NOTE: This is a best-effort identifier. For a fully stable and collision-free
     // node identity consider persisting a UUID on first run to `.gstore/node_id`.
+    // TODO: Implement stable persistent UUID — see GEMINI.md §7 (Open TODOs, Low priority).
     let hostname = std::env::var("COMPUTERNAME")
         .or_else(|_| std::env::var("HOSTNAME"))
         .unwrap_or_else(|_| "unknown".to_string());
