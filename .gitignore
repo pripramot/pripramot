@@ -18,6 +18,13 @@ src-tauri/icons/
 .gstore/cache/
 .gstore/*.db
 
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+
 # OS
 .DS_Store
 Thumbs.db
