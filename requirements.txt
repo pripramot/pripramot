@@ -3,4 +3,5 @@ uvicorn
 pytest
 python-json-logger
 requests
+httpx
 pre-commit

@@ -21,4 +21,6 @@ jobs:
           pip install -r requirements.txt
           pip install pytest python-json-logger
       - name: Run tests
+        env:
+          PYTHONPATH: ${{ github.workspace }}
         run: pytest -q
