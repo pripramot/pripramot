@@ -63,4 +63,3 @@ async def webhook_receiver(
     )
     # TODO: validate manifest, enqueue processing
     return {"status": "ok", "trace_id": trace_id}
-
