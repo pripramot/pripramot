@@ -1,25 +1,31 @@
-# GSTORE: Engineering & Forensic Standards
+# GSTORE: มาตรฐานวิศวกรรมและนิติวิทยาศาสตร์ (Engineering & Forensic Standards)
 
-## 🎯 Vision
-A high-performance file search engine and modern app store for forensics and power users. Built with Tauri v2 (Rust + React).
+## 🎯 วิสัยทัศน์
 
-## 🛡️ Security & Integrity (Mandatory)
-1. **Forensic Logging:** All critical actions (Downloads, Installs, Scans, Manifest Updates) MUST be logged in `.gstore/logs/` in structured JSON format.
-2. **Immutable Trace:** Every log entry must include: `timestamp`, `actor`, `action`, `input_hash`, `result_hash`, and `node_id`.
-3. **Local-First Analysis:** File metadata extraction (แงะ) must happen LOCALLY. No binary data should be sent to 3rd party APIs.
-4. **Signature Verification:** All manifest updates via GitHub Webhook MUST verify the HMAC signature.
-5. **Sandboxed Worker:** Heavy file analysis tasks MUST run in isolated background threads (Tokio) or separate processes.
+ระบบค้นหาไฟล์ประสิทธิภาพสูงและ App Store ยุคใหม่สำหรับงานนิติวิทยาศาสตร์และ Power User พัฒนาด้วย Tauri v2 (Rust + React)
 
-## 💻 Coding Style
-- **Rust Backend:** Use `tokio` for async tasks. Prefer `thiserror` and `anyhow` for robust error handling.
-- **Frontend:** React + TypeScript + Tailwind CSS. Follow the "Modern Glassmorphism" aesthetic.
-- **State Management:** Use `Zustand` on the frontend and `Tauri State` on the backend.
-- **Testing:** 100% test coverage for `manifest validator` and `file extractor core`.
+## 🛡️ ความปลอดภัยและความน่าเชื่อถือ (บังคับ)
 
-## 📁 Directory Structure
-- `src-tauri/`: Rust logic, commands, and forensic modules.
-- `src/`: React frontend (UI/UX).
-- `.gstore/`: Local database, cache, and immutable logs.
+1. **Forensic Logging:** เหตุการณ์สำคัญทั้งหมด (ดาวน์โหลด / ติดตั้ง / สแกน / อัปเดต Manifest) ต้องถูกบันทึกเป็น JSON แบบมีโครงสร้างใน `.gstore/logs/`
+2. **Immutable Trace:** ทุก log ต้องมีฟิลด์ครบ ได้แก่ `timestamp`, `actor`, `action`, `input_hash`, `result_hash` และ `node_id`
+3. **Local-First Analysis:** การดึงเมทาดาทาของไฟล์ (แงะ) ต้องประมวลผลบนเครื่องเท่านั้น ห้ามส่งข้อมูลไบนารีออกไปยัง API ภายนอก
+4. **Signature Verification:** การอัปเดต Manifest ผ่าน GitHub Webhook ทุกครั้งต้องตรวจสอบลายเซ็น HMAC
+5. **Sandboxed Worker:** งานวิเคราะห์ไฟล์ที่หนักต้องรันใน background thread แยกต่างหาก (Tokio) หรือ process แยก
+
+## 💻 แนวทางการเขียนโค้ด
+
+- **Rust:** ใช้ `tokio` สำหรับงาน async ใช้ `thiserror` และ `anyhow` สำหรับจัดการ error
+- **Frontend:** React + TypeScript + Tailwind CSS ตามแนวทาง "Modern Glassmorphism"
+- **State Management:** ใช้ `Zustand` ฝั่ง frontend และ Tauri State ฝั่ง backend
+- **Testing:** ตั้งเป้า test coverage สูง โดยเฉพาะ `manifest validator` และแกนหลัก `file extractor`
+
+## 📁 โครงสร้างไดเรกทอรี
+
+- `src-tauri/`: โค้ด Rust, คำสั่ง Tauri และโมดูลนิติวิทยาศาสตร์
+- `src/`: สคริปต์ Python (manifest validator, logging)
+- `frontend/`: React UI/UX
+- `.gstore/`: ฐานข้อมูลโลคอล, cache และ log ที่ตรวจสอบย้อนหลังได้
 
 ---
-*Created by: Nangnoy (Gemini CLI) for Jarntam (Forensic Master)*
+
+*สร้างโดย: Nangnoy (Gemini CLI) สำหรับ Jarntam (Forensic Master)*

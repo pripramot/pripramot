@@ -1,10 +1,20 @@
 import logging
-from pythonjsonlogger import jsonlogger
 
-def configure_json_logging(service_name: str = "gstore"):
+from pythonjsonlogger.json import JsonFormatter
+
+
+def configure_json_logging(service_name: str = "gstore") -> logging.LoggerAdapter:
+    """ตั้งค่า JSON structured logging สำหรับ service ที่ระบุ
+
+    Args:
+        service_name: ชื่อ service ที่ใช้เป็น logger name และ default field
+
+    Returns:
+        LoggerAdapter พร้อม field ``service`` ติดมาเสมอ
+    """
     handler = logging.StreamHandler()
-    fmt = '%(asctime)s %(levelname)s %(name)s %(service)s %(trace_id)s %(span_id)s %(message)s'
-    formatter = jsonlogger.JsonFormatter(fmt)
+    fmt = "%(asctime)s %(levelname)s %(name)s %(service)s %(trace_id)s %(span_id)s %(message)s"
+    formatter = JsonFormatter(fmt)
     handler.setFormatter(formatter)
 
     root = logging.getLogger()
