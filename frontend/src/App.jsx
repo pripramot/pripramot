@@ -3,7 +3,7 @@ import { invoke } from '@tauri-apps/api/core';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Search, ShoppingBag, Terminal, FileText, 
-  ShieldCheck, LayoutGrid, AppWindow, 
+  ShieldCheck, LayoutGrid, AppWindow, HardDrive,
   Settings, Download, Star, ChevronRight, Info
 } from 'lucide-react';
 
@@ -23,7 +23,7 @@ export default function App() {
     try {
       const res = await invoke('search_files', { query, path: 'C:\\Users\\usEr' });
       setResults(res);
-      await invoke('log_forensic_event', { action: 'SEARCH', details: `User searched: ${query}` });
+      await invoke('log_forensic_event', { actor: 'user', action: 'SEARCH', details: `User searched: ${query}` });
     } catch (err) { console.error(err); }
   };
 

@@ -3,8 +3,15 @@
 _REQUIRED_TOP_LEVEL: frozenset[str] = frozenset({"version", "last_updated", "catalog"})
 _REQUIRED_ENTRY_FIELDS: frozenset[str] = frozenset(
     {
-        "id", "name", "description", "version", "category",
-        "icon_url", "download_url", "checksum", "is_verified",
+        "id",
+        "name",
+        "description",
+        "version",
+        "category",
+        "icon_url",
+        "download_url",
+        "checksum",
+        "is_verified",
     }
 )
 
