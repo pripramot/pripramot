@@ -13,7 +13,7 @@ def configure_json_logging(service_name: str = "gstore") -> logging.LoggerAdapte
         LoggerAdapter พร้อม field ``service`` ติดมาเสมอ
     """
     handler = logging.StreamHandler()
-    fmt = "%(asctime)s %(levelname)s %(name)s %(service)s %(trace_id)s %(span_id)s %(message)s"
+    fmt = "%(asctime)s %(levelname)s %(name)s %(service)s %(trace_id)s %(message)s"
     formatter = JsonFormatter(fmt)
     handler.setFormatter(formatter)
 
