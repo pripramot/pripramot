@@ -26,9 +26,7 @@ def _verify_github_signature(body: bytes, signature_header: str | None) -> None:
         raise HTTPException(status_code=403, detail="Webhook secret not configured")
     if not signature_header or not signature_header.startswith("sha256="):
         raise HTTPException(status_code=403, detail="Missing or malformed signature")
-    expected = "sha256=" + hmac.new(
-        secret.encode(), body, hashlib.sha256
-    ).hexdigest()
+    expected = "sha256=" + hmac.new(secret.encode(), body, hashlib.sha256).hexdigest()
     if not hmac.compare_digest(expected, signature_header):
         raise HTTPException(status_code=403, detail="Invalid signature")
 
