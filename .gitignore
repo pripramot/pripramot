@@ -1,30 +1,118 @@
-# Node
+# ============================================
+# Node / JavaScript / Frontend
+# ============================================
 node_modules/
 dist/
 dist-ssr/
 *.local
+.npm
+.eslintcache
+.parcel-cache
+.next/
+out/
+build/
+.nuxt/
+.vite/
 
+# ============================================
 # Rust
+# ============================================
 target/
-Cargo.lock
+# Cargo.lock ควร commit ใน binary projects แต่ ignore ใน libraries
+# Cargo.lock
 
+# ============================================
 # Tauri
+# ============================================
 src-tauri/target/
 src-tauri/gen/
 src-tauri/icons/
 
+# ============================================
+# Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+.pytest_cache/
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+.env
+*.egg
+pip-log.txt
+pip-delete-this-directory.txt
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+htmlcov/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+
+# ============================================
 # GSTORE Local
+# ============================================
 .gstore/logs/
 .gstore/cache/
 .gstore/*.db
 
-# Python
-__pycache__/
-*.py[cod]
-.pytest_cache/
-*.egg-info/
-.eggs/
+# ============================================
+# Environment & Secrets
+# ============================================
+.env
+.env.local
+.env.*.local
+.env.production
+*.pem
+*.key
+secrets.json
 
+# ============================================
+# IDE / Editor
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# ============================================
 # OS
+# ============================================
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+desktop.ini
+
+# ============================================
+# Logs
+# ============================================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================================
+# Temporary files
+# ============================================
+tmp/
+temp/
+*.tmp
+*.bak
+*.cache
